@@ -20,7 +20,7 @@ while len(targets) > 0:
     targets = new_parents
     new_parents = set()
 
-print("Overall, found", len(all_parents), "parents of 'shiny gold'")
+print("Overall, found {} parents of 'shiny gold'".format(len(all_parents)))
 
 gold_ = graph['shiny gold']
 
@@ -33,4 +33,30 @@ def value(bag):
     return numOfBags
 
 
-print("The 'shiny gold' bag must contain", value('shiny gold'), "bags")
+print("The 'shiny gold' bag must contain {} bags".format(value('shiny gold')))
+
+
+# Some exercises
+# FACTORIAL IMPLEMENTATION
+def factorial(num):
+    if num <= 1:
+        return 1
+    return num * (factorial(num - 1))
+
+
+inputNum = 5
+print("Factorial of: {} is: {}".format(inputNum, factorial(inputNum)))
+
+
+# SUM LIST ITEMS
+def sumFactorial(items):
+    if len(items) < 1:
+        return 0
+    if len(items) == 1:
+        return items[0]
+    else:
+        return items[0] + sumFactorial(items[1:])
+
+
+testItems = [1, 2, 3, 4, 5]
+print("Factorial sum of list items is: {}".format(sumFactorial(testItems)))
